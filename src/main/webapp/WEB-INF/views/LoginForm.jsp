@@ -18,7 +18,8 @@
     window.Kakao.init('f23dd1e144155c8ddaa625e38ef2ef65');
 
     function kakaoLogin(){
-        window.Kakao.Auth.login({
+        window.Kakao.Auth.authorize({
+            redirect
             scope: 'profile_nickname, account_email',
             success: function(authObj){
                 console.log(authObj);

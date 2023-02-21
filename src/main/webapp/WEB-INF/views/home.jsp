@@ -11,6 +11,6 @@
     <script></script>
 </head>
 <body>
-    <a href="loginForm">로그인</a>
+    <a href="loginForm"><img src="https://pds.saramin.co.kr/company/logo/201509/08/1441692003_fa79-b4d24804_logo.jpg" style="height:200px; display: block; margin: 0px auto;"></a>
 </body>
 </html>

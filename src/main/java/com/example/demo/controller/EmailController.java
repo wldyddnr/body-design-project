@@ -19,16 +19,19 @@ public class EmailController {
         this.emailService = emailService;
     }
 
+    
+
     @GetMapping("/mailCheck")
     @ResponseBody
     public String sendmail(String email) throws MessagingException {
         StringBuffer emailcontent = new StringBuffer();
         String key = certified_key();
         emailcontent.append(key);
-        emailService.sendMail(email, "이메일 인증", emailcontent.toString());
+        emailService.sendMail(email, "이메일 인증", emailcontent.toString()); //메일발송
         return key;
     }
 
+    //인증번호 생성 메소드
     private String certified_key() {
         Random random = new Random();
         StringBuffer sb = new StringBuffer();

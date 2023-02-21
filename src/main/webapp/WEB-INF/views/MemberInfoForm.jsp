@@ -27,6 +27,12 @@
                     return false;
                 }
 
+                if (memberInfo.password.value != <%=member.getPassword()%>){
+                    check.innerHTML = '비밀번호를 확인해주세요..';
+                    memberInfo.password.focus();
+                    return false;
+                }
+
                 join.submit();
             }
 
