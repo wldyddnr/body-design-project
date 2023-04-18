@@ -4,8 +4,6 @@
 :calendar: 2023 02 13 ~ 2023 02 20
 ## CONTENT
 ---
-- [BODY DEGIGN](#body-degign)
-  - [CONTENT](#content)
   - [개요](#개요)
   - [설계의 주안점](#설계의-주안점)
   - [개발환경](#개발환경)
