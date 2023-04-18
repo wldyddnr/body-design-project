@@ -21,13 +21,14 @@ public class EmailController {
 
     
 
+    //메일보내기
     @GetMapping("/mailCheck")
     @ResponseBody
     public String sendmail(String email) throws MessagingException {
         StringBuffer emailcontent = new StringBuffer();
         String key = certified_key();
         emailcontent.append(key);
-        emailService.sendMail(email, "이메일 인증", emailcontent.toString()); //메일발송
+        emailService.sendMail(email, "이메일 인증", "인증번호는 "+emailcontent.toString()+"입니다."); //메일발송
         return key;
     }
 

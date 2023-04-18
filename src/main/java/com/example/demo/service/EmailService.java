@@ -20,10 +20,10 @@ public class EmailService {
         MimeMessage mimeMessage = javaMailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, "utf-8");
 
-        helper.setFrom("hi"); //보내는사람
-        helper.setTo(toEmail); //받는사람
-        helper.setSubject(subject); //메일제목
-        helper.setText(message, true); //ture넣을경우 html
+        helper.setFrom("hi");
+        helper.setTo(toEmail);
+        helper.setSubject(subject);
+        helper.setText(message, true);
 
 
         javaMailSender.send(mimeMessage);

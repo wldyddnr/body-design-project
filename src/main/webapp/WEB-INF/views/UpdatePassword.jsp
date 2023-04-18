@@ -59,7 +59,7 @@
             </div>
             <div class="mb-1">
                <label for="newPassword" class="form-label">새 비밀번호</label> <input type="password"
-               class="form-control" id="newPassword" placeholder="">
+               class="form-control" id="newPassword" name="newPassword" placeholder="">
             </div>
             <div>
                <label for="newPasswordConfirm" class="form-label">새 비밀번호 확인</label>

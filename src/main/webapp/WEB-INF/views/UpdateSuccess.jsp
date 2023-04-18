@@ -9,7 +9,7 @@
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script>
-        alert('수정 되었습니다.');
+        alert('변경 되었습니다.');
         location.href='memberInfo';
     </script>
 </head>

@@ -9,7 +9,7 @@
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script>
-        alert('입력하신 이메일로 전송하였습니다..');
+        alert('입력하신 이메일로 전송하였습니다.');
         location.href='loginForm';
     </script>
 </head>

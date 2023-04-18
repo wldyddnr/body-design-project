@@ -96,8 +96,9 @@ public class MemberController {
     }
 
     @PostMapping("updatePassword")
-    public String updatePassword(HttpSession session, Model model) {
+    public String updatePassword(HttpSession session,Model model,@RequestParam String newPassword) {
         Member member = (Member) session.getAttribute("member");
+        member.setPassword(newPassword);
         memberService.updateInfo(member);
         model.addAttribute("member", member);
         return "UpdateSuccess";
@@ -116,7 +117,7 @@ public class MemberController {
         if (member != null) {
             StringBuffer emailcontent = new StringBuffer();
             emailcontent.append(member.getPassword());
-            emailService.sendMail(email, "비밀번호 찾기", emailcontent.toString());
+            emailService.sendMail(email, "비밀번호 찾기", member.getName()+"님의 비밀번호는 "+emailcontent.toString()+"입니다.");
             return "FindSuccess";
         }
         return "FindFail";
@@ -125,11 +126,10 @@ public class MemberController {
     @PostMapping("findId")
     public String findId(String email, String name) throws MessagingException {
         Member member = memberService.findId(email, name);
-        System.out.println(member.toString());
         if (member != null) {
             StringBuffer emailcontent = new StringBuffer();
             emailcontent.append(member.getId());
-            emailService.sendMail(email, "아이디 찾기", emailcontent.toString());
+            emailService.sendMail(email, "아이디 찾기", member.getName()+"님의 아이디는 "+emailcontent.toString()+"입니다");
             return "FindSuccess";
         }
         return "FindFail";

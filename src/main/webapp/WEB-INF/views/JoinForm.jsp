@@ -20,6 +20,7 @@
 		const check = document.getElementById('check');
 		if (join.id.value.length < 1) {
 			check.innerHTML = '아이디를 입력하세요.';
+			window.scrollTo({top:100, behavior:'smooth'});
 			join.id.focus();
 			return false;
 		}
@@ -169,7 +170,7 @@
 						placeholder="인증번호를 입력해주세요.">
 				</div>
 			</div>
-			<div id="check" style="text-align: center;"></div>
+			<div id="check" style="text-align: center; color: blue;"></div>
 			<div style="text-align: center;">
 				<br> <br>
 				<button type="submit" class="btn btn-dark btn-lg"
@@ -181,5 +182,6 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
 		crossorigin="anonymous"></script>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>
