@@ -1,4 +1,4 @@
-# BODY DEGIGN
+# :musle: BODY DEGIGN
 지용욱
 
 :calendar: 2023 02 13 ~ 2023 02 20
