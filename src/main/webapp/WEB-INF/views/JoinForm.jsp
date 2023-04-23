@@ -105,7 +105,7 @@
 	var confirmOnce = true;
 	function confirmEmail() {
 
-		const email = $('#email').val(); // 이메일 주소값 얻어오기!
+		const email = $('#email').val(); // 이메일 주소값 얻어오기
 		console.log('완성된 이메일 : ' + email); // 이메일 오는지 확인
 		const checkInput = $('#emailConfirm') // 인증번호 입력하는곳
 		$.ajax({
