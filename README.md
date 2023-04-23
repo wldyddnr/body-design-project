@@ -10,6 +10,7 @@
   - [프로젝트 기능 구현](#프로젝트-기능-구현)
 
 ## 개요
+> 체중조절과 식습관 개선을위해 자신의 활동칼로리를 계산해주는 사이트
 ## 설계의 주안점
 ## 개발환경
 <span><img src="https://img.shields.io/badge/Java-blue?style=flat-square&logo=Java&logoColor=white"/></span>&nbsp;
