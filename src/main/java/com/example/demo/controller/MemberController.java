@@ -35,11 +35,14 @@ public class MemberController {
     public String login(Model model, Member member) {
         Member loginMember = memberService.login(member.getId());
         if (loginMember == null) {
+            model.addAttribute("member", null);
             return "LoginFail";
         } else if (!loginMember.getPassword().equals(member.getPassword())) {
+            model.addAttribute("member", null);
             return "LoginFail";
         }
         model.addAttribute("member", loginMember);
+
         System.out.println(loginMember.toString());
         return "MemberInfoForm";
     }
@@ -96,7 +99,7 @@ public class MemberController {
     }
 
     @PostMapping("updatePassword")
-    public String updatePassword(HttpSession session,Model model,@RequestParam String newPassword) {
+    public String updatePassword(HttpSession session, Model model, @RequestParam String newPassword) {
         Member member = (Member) session.getAttribute("member");
         member.setPassword(newPassword);
         memberService.updateInfo(member);
@@ -117,7 +120,7 @@ public class MemberController {
         if (member != null) {
             StringBuffer emailcontent = new StringBuffer();
             emailcontent.append(member.getPassword());
-            emailService.sendMail(email, "비밀번호 찾기", member.getName()+"님의 비밀번호는 "+emailcontent.toString()+"입니다.");
+            emailService.sendMail(email, "비밀번호 찾기", member.getName() + "님의 비밀번호는 " + emailcontent.toString() + "입니다.");
             return "FindSuccess";
         }
         return "FindFail";
@@ -129,7 +132,7 @@ public class MemberController {
         if (member != null) {
             StringBuffer emailcontent = new StringBuffer();
             emailcontent.append(member.getId());
-            emailService.sendMail(email, "아이디 찾기", member.getName()+"님의 아이디는 "+emailcontent.toString()+"입니다");
+            emailService.sendMail(email, "아이디 찾기", member.getName() + "님의 아이디는 " + emailcontent.toString() + "입니다");
             return "FindSuccess";
         }
         return "FindFail";
