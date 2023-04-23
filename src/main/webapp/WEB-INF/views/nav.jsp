@@ -14,6 +14,7 @@
 <body>
 <%
     Member member = (Member) session.getAttribute("member");
+    System.out.println(member);
 %>
 	<nav class="navbar navbar-expand-lg bg-body-white">
 		<div class="container-fluid">
