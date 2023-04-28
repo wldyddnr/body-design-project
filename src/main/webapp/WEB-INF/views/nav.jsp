@@ -30,13 +30,14 @@
 				<%
         			if(member == null){
                 %>
-					<li class="nav-item"><a class="nav-link active"
+					<li class="nav-item"><a class="nav-link"
 						aria-current="page" href="loginForm">로그인</a></li>
 				<%
 				}else{
 				%>
 				    <li class="nav-item"><a class="nav-link" href="/memberInfo"><%=member.getName()%></a></li>
-                    <li class="nav-item"><a class="nav-link active" href="/logout">로그아웃</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logout">로그아웃</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/metabolismForm">칼로리계산기</a></li>
                 <%
                 }
                 %>
