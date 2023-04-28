@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Data
-@Entity
 public class Member {
 
     private String id;
