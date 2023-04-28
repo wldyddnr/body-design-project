@@ -84,7 +84,7 @@
 				<a style="text-decoration: none; color: blueviolet;"
 					href="findPassword">아이디/비밀번호를 잊으셨나요?</a>
 			</div>
-			<div id="check" style="text-align: center;"></div>
+			<div id="check" style="text-align: center; font-weight:bold;"></div>
 			<div style="text-align: center;">
 				<button type="submit" class="btn btn-dark btn-lg"
 					style="width: 50%; height: 50px;">로그인하기</button>
