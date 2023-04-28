@@ -91,84 +91,87 @@
     </script>
 </head>
 <body>
-<div class="container-sm" style="max-width: 500px;">
-        <br><br>
-        <div class="mb-3">
-            <h3 style="padding: 20px;">칼로리 계산기</h3>
-        </div>
-        <br>
-        <form class="row g-3" action="" name="metabolismForm">
-            <div class="mb-3 row">
-                <label for="age" class="col-sm-2 col-form-label">나이:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="age">
-                </div>
+    <jsp:include page="nav.jsp" />
+    <div class="container-sm" style="max-width: 500px;">
+            <br><br>
+            <div class="mb-3">
+                <h3 style="padding: 20px;">칼로리 계산기</h3>
             </div>
-            <div class="mb-3 row">
-                <label for="height" class="col-sm-2 col-form-label">키(cm):</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="height" name="height">
+            <br>
+            <form class="row g-3" action="" name="metabolismForm">
+                <input type="hidden" value="">
+                <div class="mb-3 row">
+                    <label for="age" class="col-sm-2 col-form-label">나이:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="age">
+                    </div>
                 </div>
-            </div>
-            <div class="mb-3 row">
-                <label for="weight" class="col-sm-2 col-form-label">몸무게(kg):</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="weight" name="weight">
+                <div class="mb-3 row">
+                    <label for="height" class="col-sm-2 col-form-label">키(cm):</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="height" name="height">
+                    </div>
                 </div>
-            </div>
-            <div class="mb-3 row">
-                <div class="form-check-inline" id="gender-radio" name="gender-radio">
-                    <input class="form-check-input" type="radio" name="gender" id="gender" value="male" checked>
-                    <label class="form-check-label" for="male">
-                        남자
-                    </label>
-                    <input class="form-check-input" type="radio" name="gender" id="gender" value="female">
-                    <label class="form-check-label" for="female">
-                        여자
-                    </label>
+                <div class="mb-3 row">
+                    <label for="weight" class="col-sm-2 col-form-label">몸무게(kg):</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="weight" name="weight">
+                    </div>
                 </div>
-            </div>
-            <div class="mb-3 row">
-                <select class="form-select" aria-label="Default select example" id="activityRate">
-                    <option selected value="1">활동량을 선택해주세요</option>
-                    <option value="1.2">빈둥빈둥</option>
-                    <option value="1.5">좌식 업무</option>
-                    <option value="1.8">돌아다니는 업무</option>
-                    <option value="2">활동적인 업무</option>
-                </select>
+                <div class="mb-3 row">
+                    <div class="form-check-inline" id="gender-radio" name="gender-radio">
+                        <input class="form-check-input" type="radio" name="gender" id="gender" value="male" checked>
+                        <label class="form-check-label" for="male">
+                            남자
+                        </label>
+                        <input class="form-check-input" type="radio" name="gender" id="gender" value="female">
+                        <label class="form-check-label" for="female">
+                            여자
+                        </label>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <select class="form-select" aria-label="Default select example" id="activityRate">
+                        <option selected value="1">활동량을 선택해주세요</option>
+                        <option value="1.2">빈둥빈둥</option>
+                        <option value="1.5">좌식 업무</option>
+                        <option value="1.8">돌아다니는 업무</option>
+                        <option value="2">활동적인 업무</option>
+                    </select>
 
-            </div>
-            <div class="mb-3 row">
-                <div id="check" style="text-align: center; font-weight:bold; color: blue;"></div>
-            </div>
-            <div class="mb-3 row">
-                <div style="text-align: center;">
-                    <button type="button" class="btn btn-dark" style="width: 50%; height: 50px;"
-                        onclick="metabolism();">계산하기</button>
                 </div>
-            </div>
-            <div class="mb-3 row">
-                <label for="basalMetabolicRate" class="col-sm-2 col-form-label">기초대사량:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="basalMetabolicRate" name="basalMetabolicRate">kcal
+                <div class="mb-3 row">
+                    <div id="check" style="text-align: center; font-weight:bold; color: blue;"></div>
                 </div>
-            </div>
-            <div class="mb-3 row">
-                <label for="activityMetabolism" class="col-sm-2 col-form-label">활동대사량:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="activityMetabolism" name="activityMetabolism">kcal
+                <div class="mb-3 row">
+                    <div style="text-align: center;">
+                        <button type="button" class="btn btn-dark" style="width: 50%; height: 50px;"
+                            onclick="metabolism();">계산하기</button>
+                    </div>
                 </div>
-            </div>
-            <div class="mb-3 row">
-                <div id="check2" style="text-align: center; font-weight:bold; color: blue;"></div>
-            </div>
-            <div class="mb-3 row">
-                <div style="text-align: center;">
-                    <button type="button" class="btn btn-dark" style="width: 50%; height: 50px;"
-                        onclick="check();">저장하기</button>
+                <div class="mb-3 row">
+                    <label for="basalMetabolicRate" class="col-sm-2 col-form-label">기초대사량:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="basalMetabolicRate" name="basalMetabolicRate">kcal
+                    </div>
                 </div>
-            </div>
-        </form>
-    </div>
+                <div class="mb-3 row">
+                    <label for="activityMetabolism" class="col-sm-2 col-form-label">활동대사량:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="activityMetabolism" name="activityMetabolism">kcal
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <div id="check2" style="text-align: center; font-weight:bold; color: blue;"></div>
+                </div>
+                <div class="mb-3 row">
+                    <div style="text-align: center;">
+                        <button type="button" class="btn btn-dark" style="width: 50%; height: 50px;"
+                            onclick="check();">저장하기</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <jsp:include page="footer.jsp" />
 </body>
 </html>
