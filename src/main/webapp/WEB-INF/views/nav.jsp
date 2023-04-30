@@ -18,7 +18,7 @@
 %>
 	<nav class="navbar navbar-expand-lg bg-body-white">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="/"><img src="https://pds.saramin.co.kr/company/logo/201509/08/1441692003_fa79-b4d24804_logo.jpg" style="height:70px;"></a>
+			<a class="navbar-brand" href="/"><img src="https://item.kakaocdn.net/do/bbb480ec0250be12133594a2dce321e6ac8e738cb631e72fdb9a96b36413984e" style="height:50px;"></a>
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
 				aria-controls="navbarSupportedContent" aria-expanded="false"
