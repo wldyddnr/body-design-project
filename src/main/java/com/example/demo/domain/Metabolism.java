@@ -9,7 +9,7 @@ public class Metabolism {
     private int age;
     private int height;
     private int weight;
-    private String sex;
+    private String gender;
     private int activity;
     private int basalMetabolicRate;
     private int activityMetabolism;
