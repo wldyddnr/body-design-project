@@ -11,6 +11,12 @@
     <script></script>
 </head>
 <body>
-    <a href="loginForm"><img src="https://pds.saramin.co.kr/company/logo/201509/08/1441692003_fa79-b4d24804_logo.jpg" style="height:200px; display: block; margin: 0px auto;"></a>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <a href="loginForm"><img src="https://item.kakaocdn.net/do/bbb480ec0250be12133594a2dce321e6ac8e738cb631e72fdb9a96b36413984e" style="height:200px; display: block; margin: 0px auto;"></a>
 </body>
 </html>
