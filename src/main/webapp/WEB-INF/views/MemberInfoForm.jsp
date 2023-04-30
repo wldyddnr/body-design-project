@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.example.demo.domain.Member" %>
-<% Member member = (Member) session.getAttribute("member"); %>
     <!DOCTYPE html>
     <html>
 
@@ -27,7 +26,7 @@
                     return false;
                 }
 
-                if (memberInfo.password.value != <%=member.getPassword()%>){
+                if (memberInfo.password.value != ${member.getPassword()}){
                     check.innerHTML = '비밀번호를 확인해주세요..';
                     memberInfo.password.focus();
                     return false;
@@ -51,12 +50,12 @@
                 <div class="mb-1">
                     <label for="id" class="form-label">아이디</label>
                     <div class="input-group">
-                        <%=member.getId()%>
+                        ${member.getId()}
                     </div>
                 </div>
                 <div class="mb-1">
                     <label for="name" class="form-label">이름</label> <input type="text" class="form-control" id="name"
-                        name="name" value="<%=member.getName()%>">
+                        name="name" value="${member.getName()}">
                 </div>
                 <div class="mb-1">
                     <label for="password" class="form-label">비밀번호</label> <input type="password" class="form-control"
@@ -65,7 +64,7 @@
                 <div class="mb-1">
                     <label for="email" class="form-label">이메일</label>
                     <div class="input-group">
-                        <%=member.getEmail()%>
+                        ${member.getEmail()}
                     </div>
                     <br>
                 </div>
