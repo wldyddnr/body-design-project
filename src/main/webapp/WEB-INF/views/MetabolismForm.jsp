@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.example.demo.domain.Metabolism" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +10,17 @@
     <script src="https://code.jquery.com/jquery-3.6.3.js"
         integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script>
+
+        $(function(){
+            var genderVal = ${metabolism.getGender()};
+            if(${metabolism.getGender()} == null){
+                $(":radio[name='gender'][value='male']").attr('checked', true);
+            }else{
+                $(":radio[name='gender'][value='"+genderVal+"']").attr('checked', true);
+            }
+        });
+
+
 
         function metabolism() {
 
@@ -98,29 +110,29 @@
                 <h3 style="padding: 20px;">칼로리 계산기</h3>
             </div>
             <br>
-            <form class="row g-3" action="" name="metabolismForm">
-                <input type="hidden" value="">
+            <form class="row g-3" action="metabolismUpdate" name="metabolismForm" method="post">
+                <input type="hidden" value="${member.getId()}" id="mid" name="mid">
                 <div class="mb-3 row">
                     <label for="age" class="col-sm-2 col-form-label">나이:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="age">
+                        <input type="text" class="form-control" id="age" name="age" value="${metabolism.getAge()}">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="height" class="col-sm-2 col-form-label">키(cm):</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="height" name="height">
+                        <input type="text" class="form-control" id="height" name="height" value="${metabolism.getHeight()}">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="weight" class="col-sm-2 col-form-label">몸무게(kg):</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="weight" name="weight">
+                        <input type="text" class="form-control" id="weight" name="weight" value="${metabolism.getWeight()}">
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <div class="form-check-inline" id="gender-radio" name="gender-radio">
-                        <input class="form-check-input" type="radio" name="gender" id="gender" value="male" checked>
+                        <input class="form-check-input" type="radio" name="gender" id="gender" value="male">
                         <label class="form-check-label" for="male">
                             남자
                         </label>
@@ -131,7 +143,7 @@
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <select class="form-select" aria-label="Default select example" id="activityRate">
+                    <select class="form-select" aria-label="Default select example" id="activityRate" name="activityRate">
                         <option selected value="1">활동량을 선택해주세요</option>
                         <option value="1.2">빈둥빈둥</option>
                         <option value="1.5">좌식 업무</option>
@@ -152,13 +164,13 @@
                 <div class="mb-3 row">
                     <label for="basalMetabolicRate" class="col-sm-2 col-form-label">기초대사량:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="basalMetabolicRate" name="basalMetabolicRate">kcal
+                        <input type="text" class="form-control" id="basalMetabolicRate" name="basalMetabolicRate" value="${metabolism.getBasalMetabolicRate()}">kcal
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="activityMetabolism" class="col-sm-2 col-form-label">활동대사량:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="activityMetabolism" name="activityMetabolism">kcal
+                        <input type="text" class="form-control" id="activityMetabolism" name="activityMetabolism" value="${metabolism.getActivityMetabolism()}">kcal
                     </div>
                 </div>
                 <div class="mb-3 row">
