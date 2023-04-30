@@ -1,9 +1,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.example.demo.domain.Member" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
 <title>로그인</title>
+<%
+    Member member = (Member) session.getAttribute("member");
+    if(member != null){
+        response.sendRedirect("memberInfo");
+    }
+%>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -96,10 +103,6 @@
 				style="width: 50%; height: 50px;"
 				onclick="location.href='joinForm' ">회원 가입하기</button>
 		</div>
-		<div style="text-align: center;">
-        			<br>
-        			<a href="javascript:kakaoLogin();"><img src="https://m.stco.co.kr/Content/images/login/kakao_login.png" style="height:60px;width:auto;">
-        		</div>
 
 	</div>
 	<script
