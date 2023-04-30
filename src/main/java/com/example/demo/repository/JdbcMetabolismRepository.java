@@ -22,6 +22,7 @@ public class JdbcMetabolismRepository implements MetabolismRepository{
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
+        int result = 0;
         try {
             conn = getConnection();
             pstmt = conn.prepareStatement(sql);
@@ -30,12 +31,12 @@ public class JdbcMetabolismRepository implements MetabolismRepository{
             pstmt.setInt(2, metabolism.getAge());
             pstmt.setInt(3, metabolism.getHeight());
             pstmt.setInt(4, metabolism.getWeight());
-            pstmt.setString(5,metabolism.getSex());
+            pstmt.setString(5,metabolism.getGender());
             pstmt.setInt(6,metabolism.getActivity());
             pstmt.setInt(7,metabolism.getBasalMetabolicRate());
             pstmt.setInt(8,metabolism.getActivityMetabolism());
-            pstmt.executeUpdate();
-            return 1;
+            result = pstmt.executeUpdate();
+            return result;
         } catch (Exception e) {
             throw new IllegalStateException(e);
         } finally {
@@ -46,7 +47,7 @@ public class JdbcMetabolismRepository implements MetabolismRepository{
     @Override
     public Metabolism findById(String mid) {
 
-        String sql = "select * from metabolic where mid = ?";
+        String sql = "select * from metabolism where mid = ?";
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -61,7 +62,7 @@ public class JdbcMetabolismRepository implements MetabolismRepository{
                 metabolism.setAge(rs.getInt("age"));
                 metabolism.setHeight(rs.getInt("height"));
                 metabolism.setWeight(rs.getInt("weight"));
-                metabolism.setSex(rs.getString("sex"));
+                metabolism.setGender(rs.getString("gender"));
                 metabolism.setActivity(rs.getInt("activity"));
                 metabolism.setBasalMetabolicRate(rs.getInt("basal_metabolic_rate"));
                 metabolism.setActivityMetabolism(rs.getInt("activity_metabolism"));
@@ -79,12 +80,12 @@ public class JdbcMetabolismRepository implements MetabolismRepository{
 
     @Override
     public int updateInfo(Metabolism metabolism) {
-        String sql = "UPDATE member set age = ?," +
-                "height = ? " +
-                "weight = ? " +
-                "sex = ? " +
-                "activity = ? " +
-                "basal_metabolic_rate = ? " +
+        String sql = "UPDATE metabolism set age = ?," +
+                "height = ?, " +
+                "weight = ?, " +
+                "gender = ?, " +
+                "activity = ?, " +
+                "basal_metabolic_rate = ?, " +
                 "activity_metabolism = ? " +
                 "where mid = ?";
         Connection conn = null;
@@ -95,7 +96,7 @@ public class JdbcMetabolismRepository implements MetabolismRepository{
             pstmt.setInt(1, metabolism.getAge());
             pstmt.setInt(2, metabolism.getHeight());
             pstmt.setInt(3, metabolism.getWeight());
-            pstmt.setString(4, metabolism.getSex());
+            pstmt.setString(4, metabolism.getGender());
             pstmt.setInt(5, metabolism.getActivity());
             pstmt.setInt(6, metabolism.getBasalMetabolicRate());
             pstmt.setInt(7, metabolism.getActivityMetabolism());
