@@ -22,8 +22,6 @@
 <span><img src="https://img.shields.io/badge/Apache Tomcat-red?style=flat-square&logo=Apache Tomcat&logoColor=white"/></span>&nbsp;
 <span><img src="https://img.shields.io/badge/Bootstrap-blueviolet?style=flat-square&logo=Bootstrap&logoColor=white"/></span>&nbsp;
 <span><img src="https://img.shields.io/badge/Github-black?style=flat-square&logo=GitHub&logoColor=white"/></span>&nbsp;
-<span><img src="https://img.shields.io/badge/DataBase?style=flat-square&logo=h2&logoColor=white"/></span>&nbsp;
-<span><img src="https://img.shields.io/badge/Ajax?style=flat-square&logo=ajax&logoColor=white"/></span>&nbsp;
 
 
 ## 프로젝트 기능 구현
