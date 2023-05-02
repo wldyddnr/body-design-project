@@ -4,14 +4,11 @@
 :calendar: 2023 02 13 ~ 2023 02 20
 ## CONTENT
   - [개요](#개요)
-  - [설계의 주안점](#설계의-주안점)
   - [개발환경](#개발환경)
-  - [DB설계](#db설계)
   - [프로젝트 기능 구현](#프로젝트-기능-구현)
 
 ## 개요
 > 체중조절과 식습관 개선을위해 자신의 활동칼로리를 계산해주는 사이트
-## 설계의 주안점
 ## 개발환경
 <span><img src="https://img.shields.io/badge/Java-blue?style=flat-square&logo=Java&logoColor=white"/></span>&nbsp;
 <span><img src="https://img.shields.io/badge/IntelliJ-blueviolet?style=flat-square&logo=IntelliJ IDEA&logoColor=white"/></span>&nbsp;
@@ -23,5 +20,5 @@
 <span><img src="https://img.shields.io/badge/Apache Tomcat-red?style=flat-square&logo=Apache Tomcat&logoColor=white"/></span>&nbsp;
 <span><img src="https://img.shields.io/badge/Bootstrap-blueviolet?style=flat-square&logo=Bootstrap&logoColor=white"/></span>&nbsp;
 <span><img src="https://img.shields.io/badge/Github-black?style=flat-square&logo=GitHub&logoColor=white"/></span>&nbsp;
-## DB설계
 ## 프로젝트 기능 구현
+
