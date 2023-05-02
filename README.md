@@ -9,7 +9,9 @@
 
 ## 개요
 > 체중조절과 식습관 개선을위해 자신의 활동칼로리를 계산해주는 사이트
+
 ## 개발환경
+
 <span><img src="https://img.shields.io/badge/Java-blue?style=flat-square&logo=Java&logoColor=white"/></span>&nbsp;
 <span><img src="https://img.shields.io/badge/IntelliJ-blueviolet?style=flat-square&logo=IntelliJ IDEA&logoColor=white"/></span>&nbsp;
 <span><img src="https://img.shields.io/badge/Html-red?style=flat-square&logo=HTML5&logoColor=white"/></span>&nbsp;
@@ -21,21 +23,23 @@
 <span><img src="https://img.shields.io/badge/Bootstrap-blueviolet?style=flat-square&logo=Bootstrap&logoColor=white"/></span>&nbsp;
 <span><img src="https://img.shields.io/badge/Github-black?style=flat-square&logo=GitHub&logoColor=white"/></span>&nbsp;
 
+
 ## 프로젝트 기능 구현
+
 __1. 로그인__
   - 아이디,비밀번호 찾기 - 이메일로 아이디,비밀번호 전송
-  - 
+   
 __2. 회원가입__
   - 유효성 검사, 아이디 중복체크
   - 이메일 인증
-  - 
+   
 __3. 마이페이지__
   - 회원 정보 - 회원이 가입할때 입력한 정보가 출력되고 현재 비밀번호를 입력 후 정보를 변경 가능하다.
-  - 
-__4. 칼로리 계산기
+   
+__4. 칼로리 계산기__
   - 나이,키,몸무게,성별,활동량 입력후 대사량 계산,저장
   - 저장한 정보 출력
-  - 
+   
 
 ## 로그인
 
