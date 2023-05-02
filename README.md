@@ -41,44 +41,48 @@ __4. 칼로리 계산기__
   - 저장한 정보 출력
    
 
+![메인](https://user-images.githubusercontent.com/114124771/235683184-2d1a6b29-9b02-4450-b1a9-e8a5d925c568.png)
+
+
 ## 로그인
 
 
-![화면 캡처 2023-04-30 222510](https://user-images.githubusercontent.com/114124771/235651607-94c37a8f-e970-480c-8388-d9c11c9203af.png)
+![로그인](https://user-images.githubusercontent.com/114124771/235683209-4720c8c8-5cb7-4028-9fae-700fb1d4edf4.png)
 
 
 ## 아이디,비밀번호찾기
 
 
-![화면 캡처 2023-04-30 222934](https://user-images.githubusercontent.com/114124771/235651681-8d68dc97-ad96-4b3d-b193-e7fccb82de8e.png)
+![아이디찾기](https://user-images.githubusercontent.com/114124771/235683259-daadfcdc-961a-48c8-b0b8-5b42efa2a6be.png)
 
 
-![화면 캡처 2023-04-30 222922](https://user-images.githubusercontent.com/114124771/235651699-70ceebfe-b945-4315-a63c-1c1f81d24fa1.png)
+![화면 캡처 2023-05-02 223344](https://user-images.githubusercontent.com/114124771/235683386-66baf8f9-882d-4fb1-9405-3f70a64bd704.png)
 
 
 ## 회원가입
 
 
-![화면 캡처 2023-04-30 222556](https://user-images.githubusercontent.com/114124771/235651730-e9914072-0e96-4e15-9012-59cf2e9c8f2f.png)
+![회원가입](https://user-images.githubusercontent.com/114124771/235683435-1de3822b-5e80-4962-af0e-9bbdeb4ee01a.png)
 
 
-![화면 캡처 2023-04-30 222628](https://user-images.githubusercontent.com/114124771/235651742-54853242-5bd2-40fd-a6a1-83c2400eecaa.png)
+![이메일인증](https://user-images.githubusercontent.com/114124771/235683519-a91bc0ec-f940-41f2-b146-bcc21b7a294a.png)
 
 
-![화면 캡처 2023-04-30 222713](https://user-images.githubusercontent.com/114124771/235651776-0dc43557-0fb3-4ee1-bb15-a656aa9894e9.png)
-
-
-![화면캡처 2023-04-30 222742](https://user-images.githubusercontent.com/114124771/235651800-0faff0ef-3ed8-4c37-b220-5c4fcae8f186.png)
+![인증번호](https://user-images.githubusercontent.com/114124771/235683590-5ab18ba0-ea17-43f0-b8d1-b206309565ed.png)
 
 
 ## 회원 정보
 
 
-![화면 캡처 2023-04-30 222829](https://user-images.githubusercontent.com/114124771/235651909-606c746b-8e67-4c78-a4e3-87adddb0d068.png)
+![회원정보](https://user-images.githubusercontent.com/114124771/235683703-589d06d7-8be5-45b1-a450-ae20c4cfe9fd.png)
+
+
+![비밀번호 변경](https://user-images.githubusercontent.com/114124771/235683721-918aa826-c57e-401f-86e5-424df9bd0299.png)
 
 
 ## 칼로리 계산기
 
 
-![화면 캡처 2023-04-30 223355](https://user-images.githubusercontent.com/114124771/235651926-1f9c3a92-6f5a-41f3-a811-8b8a3686e68f.png)
+![칼로리계산기](https://user-images.githubusercontent.com/114124771/235683763-b8f6de37-7be3-42c3-aaab-f50a8a43c754.png)
+
 
