@@ -1,6 +1,6 @@
-package com.example.demo.domain;
+package com.example.demo.member.domain;
 
-import lombok.Data;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
