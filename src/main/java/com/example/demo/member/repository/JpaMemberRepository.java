@@ -1,9 +1,8 @@
-package com.example.demo.repository;
+package com.example.demo.member.repository;
 
-import com.example.demo.domain.Member;
+import com.example.demo.member.domain.Member;
 
 import javax.persistence.EntityManager;
-import java.util.Optional;
 
 public class JpaMemberRepository implements MemberRepository{
 
@@ -32,7 +31,7 @@ public class JpaMemberRepository implements MemberRepository{
     }
 
     @Override
-    public int deleteMember(Member member) {
+    public int deleteMember(String id) {
         return 0;
     }
 
