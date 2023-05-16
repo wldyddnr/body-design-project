@@ -17,73 +17,72 @@
     var confirmKey = '인증번호';
 
 	function check() {
+	    var offset = $('#check').offset();
 		const check = document.getElementById('check');
 		if (join.id.value.length < 1) {
 			check.innerHTML = '아이디를 입력하세요.';
-			window.scrollTo({top:100, behavior:'smooth'});
-			join.id.focus();
 			return false;
 		}
 
 		if (join.name.value.length < 1) {
 			check.innerHTML = '이름을 입력하세요.';
-			join.name.focus();
 			return false;
 		}
 
 		if (join.password.value.length < 1) {
 			check.innerHTML = '비밀번호를 입력하세요.';
-			join.password.focus();
 			return false;
 		}
 
 		if (join.password.value.length < 6) {
 			check.innerHTML = '비밀번호를 6자 이상 입력하세요.';
-			join.password.focus();
 			return false;
 		}
 
 		if (join.passwordConfirm.value.length < 1) {
 			check.innerHTML = '비밀번호를 한번 더 입력하세요.';
-			join.passwordConfirm.focus();
 			return false;
 		}
 
 		if (join.email.value.length < 1) {
 			check.innerHTML = '이메일을 입력하세요.';
-			join.email.focus();
 			return false;
 		}
 
 		if (join.emailConfirm.value.length < 1) {
 			check.innerHTML = '인증번호를 입력하세요.';
-			join.emailConfirm.focus();
 			return false;
 		}
 
 		if (join.password.value != join.passwordConfirm.value) {
 			check.innerHTML = '비밀번호가 일치하지 않습니다.';
-			join.passwordConfirm.focus();
 			return false;
 		}
 
         if(join.idCheck.value == 1){
             check.innerHTML = '아이디 중복확인이 필요합니다.';
-            join.id.focus();
             return false;
         }
 
         if(join.emailConfirm.value != confirmKey){
             check.innerHTML = '인증번호를 확인해 주세요.';
-            join.emailConfirm.focus();
             return false;
         }
+        $('html').animate({scrollTop : offset.top}, 200);
 
 		join.submit();
 	}
 
 	function checkId() {
+
+        var offset = $('#check').offset();
 		var id = $('#id').val();
+
+		if (id < 1) {
+            $('#check').text("아이디를 입력해주세요.");
+            $('html').animate({scrollTop : offset.top}, 200);
+            return false;
+            }
 		$.ajax({
 			url : '/idCheck',
 			type : 'get',
@@ -94,11 +93,11 @@
 				if (cnt == 0) {
 					$('#check').text("사용가능한 아이디입니다.");
 					$('#idCheck').val(0);
-					console.log($('idCheck').val());
 				} else {
 					$('#check').text("이미 사용중인 아이디입니다.");
 					$('#idCheck').val(1);
 				}
+				$('html').animate({scrollTop : offset.top}, 200);
 			}
 		});
 	}
