@@ -8,17 +8,17 @@ spring:
     host: smtp.gmail.com
     port: 587
     username: wldyddnr@gmail.com
-    password: gxlteocyppsjlbhl
+    password: zyvmrzibaamgdhxt
     properties:
       mail:
         smtp:
           starttls:
             enable: true
           auth: true
-    jpa:
-      show-sql: true
-      hibernate:
-        ddl-auto: none
+  jpa:
+     show-sql: true
+     hibernate:
+       ddl-auto: none
 
   # H2 Setting Info (H2 Console에 접속하기 위한 설정정보 입력)
   h2:
@@ -31,5 +31,4 @@ spring:
     url: jdbc:h2:tcp://localhost/~/test # H2 접속 정보
     username: sa # H2 접속 시 입력할 username 정보 (원하는 것으로 입력)
     password:  # H2 접속 시 입력할 password 정보 (원하는 것으로 입력)
-
 
