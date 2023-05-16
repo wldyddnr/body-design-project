@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.example.demo.domain.Member" %>
+<%@ page import="com.example.demo.member.domain.Member" %>
 <% Member member = (Member) session.getAttribute("member");%>
 <!DOCTYPE html>
 <html>
