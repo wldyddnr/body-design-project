@@ -1,24 +1,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.example.demo.domain.Metabolism" %>
+<%@ page import="com.example.demo.metabolism.domain.Metabolism" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
-<title>칼로리계산</title>
+<title>칼로리계산기</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.3.js"
         integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script>
 
-        $(function(){
-            var genderVal = ${metabolism.getGender()};
-            if(${metabolism.getGender()} == null){
-                $(":radio[name='gender'][value='male']").attr('checked', true);
-            }else{
-                $(":radio[name='gender'][value='"+genderVal+"']").attr('checked', true);
-            }
-        });
+
 
 
 
@@ -41,6 +34,10 @@
                 check.innerHTML = '몸무게를 입력하세요.';
                 weight.focus();
                 return false;
+            }
+
+            if(){
+
             }
 
             if (activityRate.value == 1) {
@@ -85,6 +82,8 @@
                 weight.focus();
                 return false;
             }
+
+
 
             if (activityRate.value == 1) {
                 check.innerHTML = '활동량을 선택하세요.';
