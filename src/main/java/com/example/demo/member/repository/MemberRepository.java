@@ -1,6 +1,7 @@
-package com.example.demo.repository;
+package com.example.demo.member.repository;
 
-import com.example.demo.domain.Member;
+import com.example.demo.member.domain.Member;
+
 
 public interface MemberRepository {
 
@@ -9,7 +10,7 @@ public interface MemberRepository {
 
     int updateInfo(Member member);
 
-    int deleteMember(Member member);
+    int deleteMember(String id);
 
     Member findByEmailAndName(String email, String name);
 }
