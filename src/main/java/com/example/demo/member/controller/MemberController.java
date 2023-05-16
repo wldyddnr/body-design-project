@@ -1,8 +1,9 @@
-package com.example.demo.controller;
+package com.example.demo.member.controller;
 
-import com.example.demo.domain.Member;
-import com.example.demo.service.EmailService;
-import com.example.demo.service.MemberService;
+import com.example.demo.member.domain.Member;
+import com.example.demo.member.service.EmailService;
+import com.example.demo.member.service.MemberService;
+import com.example.demo.metabolism.service.MetabolismService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,11 +19,13 @@ public class MemberController {
 
     private final MemberService memberService;
     private final EmailService emailService;
+    private final MetabolismService metabolismService;
 
     @Autowired
-    public MemberController(MemberService memberService, EmailService emailService) {
+    public MemberController(MemberService memberService, EmailService emailService, MetabolismService metabolismService) {
         this.memberService = memberService;
         this.emailService = emailService;
+        this.metabolismService = metabolismService;
     }
 
     @GetMapping("/loginForm")
@@ -44,7 +47,7 @@ public class MemberController {
         model.addAttribute("member", loginMember);
 
         System.out.println(loginMember.toString());
-        return "MemberInfoForm";
+        return "LoginSuccess";
     }
 
     @GetMapping("/joinForm")
@@ -110,7 +113,8 @@ public class MemberController {
     @GetMapping("deleteMember")
     public String deleteMember(HttpSession session) {
         Member member = (Member) session.getAttribute("member");
-        memberService.deleteMember(member);
+        memberService.deleteMember(member.getId());
+        metabolismService.deleteMetabolism(member.getId());
         return "DeleteSuccess";
     }
 
