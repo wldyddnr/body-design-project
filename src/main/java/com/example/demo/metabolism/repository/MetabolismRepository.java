@@ -1,6 +1,6 @@
-package com.example.demo.repository;
+package com.example.demo.metabolism.repository;
 
-import com.example.demo.domain.Metabolism;
+import com.example.demo.metabolism.domain.Metabolism;
 
 public interface MetabolismRepository {
 
@@ -9,4 +9,6 @@ public interface MetabolismRepository {
     Metabolism findById(String mid);
 
     int updateInfo(Metabolism metabolism);
+
+    int deleteMetabolism(String mid);
 }
