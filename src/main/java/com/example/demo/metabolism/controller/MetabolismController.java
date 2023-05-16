@@ -1,8 +1,8 @@
-package com.example.demo.controller;
+package com.example.demo.metabolism.controller;
 
-import com.example.demo.domain.Member;
-import com.example.demo.domain.Metabolism;
-import com.example.demo.service.MetabolismService;
+import com.example.demo.member.domain.Member;
+import com.example.demo.metabolism.domain.Metabolism;
+import com.example.demo.metabolism.service.MetabolismService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,13 +20,13 @@ public class MetabolismController {
     }
 
     @GetMapping("/metabolismForm")
-    public String metabolismForm(HttpSession session) {
+    public String metabolismForm(HttpSession session, Model model) {
 
         Member member = (Member) session.getAttribute("member");
         System.out.println("model = " + member);
         Metabolism metabolism = metabolismService.getMetabolicInfoById(member.getId());
         if (metabolism != null) {
-            session.setAttribute("metabolism", metabolism);
+            model.addAttribute("metabolism", metabolism);
         }
 
         return "MetabolismForm";
@@ -38,7 +38,7 @@ public class MetabolismController {
         if (metabolismService.getMetabolicInfoById(metabolism.getMid()) == null) {
             metabolismService.insertMetabolicInfo(metabolism);
         } else {
-            metabolismService.updateMetaboicInfo(metabolism);
+            metabolismService.updateMetabolicInfo(metabolism);
         }
         session.setAttribute("metabolism", metabolism);
         return "MetabolismForm";
