@@ -1,15 +1,13 @@
-package com.example.demo.repository;
+package com.example.demo.metabolism.repository;
 
-import com.example.demo.domain.Member;
-import com.example.demo.domain.Metabolism;
+import com.example.demo.metabolism.domain.Metabolism;
 import org.springframework.jdbc.datasource.DataSourceUtils;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.sql.*;
 
-@Repository
-public class JdbcMetabolismRepository implements MetabolismRepository{
+public class JdbcMetabolismRepository implements MetabolismRepository {
     private final DataSource dataSource;
 
     public JdbcMetabolismRepository(DataSource dataSource){
@@ -110,6 +108,11 @@ public class JdbcMetabolismRepository implements MetabolismRepository{
         } finally {
             close(conn, pstmt, null);
         }
+    }
+
+    @Override
+    public int deleteMetabolism(String mid) {
+        return 0;
     }
 
     private Connection getConnection() {

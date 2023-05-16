@@ -1,13 +1,12 @@
-package com.example.demo.repository;
+package com.example.demo.member.repository;
 
-import com.example.demo.domain.Member;
+import com.example.demo.member.domain.Member;
 import org.springframework.jdbc.datasource.DataSourceUtils;
 import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.sql.*;
 
-@Repository
 public class JdbcMemberRepository implements MemberRepository {
     private final DataSource dataSource;
 
@@ -93,14 +92,14 @@ public class JdbcMemberRepository implements MemberRepository {
     }
 
     @Override
-    public int deleteMember(Member member) {
+    public int deleteMember(String id) {
         String sql = "delete from member where id=?";
         Connection conn = null;
         PreparedStatement pstmt = null;
         try {
             conn = getConnection();
             pstmt = conn.prepareStatement(sql);
-            pstmt.setString(1, member.getId());
+            pstmt.setString(1, id);
             int result = pstmt.executeUpdate();
             return result;
 
