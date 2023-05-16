@@ -1,9 +1,9 @@
-package com.example.demo.service;
+package com.example.demo.member.service;
 
-import com.example.demo.domain.Member;
-import com.example.demo.repository.JdbcMemberRepository;
-import com.example.demo.repository.MemberRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.demo.member.domain.Member;
+import com.example.demo.member.repository.JdbcMemberRepository;
+import com.example.demo.member.repository.MemberRepository;
+import com.example.demo.member.repository.MybatisMemberRepository;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -11,7 +11,7 @@ public class MemberService {
 
     private final MemberRepository memberRepository;
 
-    public MemberService(JdbcMemberRepository memberRepository) {
+    public MemberService(MybatisMemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
 
@@ -36,8 +36,8 @@ public class MemberService {
         return memberRepository.updateInfo(member);
     }
 
-    public int deleteMember(Member member) {
-        return memberRepository.deleteMember(member);
+    public int deleteMember(String id) {
+        return memberRepository.deleteMember(id);
     }
 
     public Member findPassword(String id) {
