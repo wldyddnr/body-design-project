@@ -3,7 +3,6 @@
 
 :calendar: 2023 02 13 ~ 2023 02 20
 
-:calendar: 2023 05 17 jdbc -> mybatis 변경
 ## CONTENT
   - [개요](#개요)
   - [개발환경](#개발환경)
