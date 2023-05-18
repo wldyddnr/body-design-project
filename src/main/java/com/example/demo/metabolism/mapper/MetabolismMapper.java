@@ -12,7 +12,7 @@ public interface MetabolismMapper {
             "#{metabolism.weight}," +
             "#{metabolism.gender}," +
             "#{metabolism.activity}," +
-            "#{metabolism.basalMetabolism}," +
+            "#{metabolism.basalMetabolicRate}," +
             "#{metabolism.activityMetabolism})")
     int save(@Param("metabolism") Metabolism metabolism);
 
