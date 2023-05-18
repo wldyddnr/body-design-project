@@ -11,8 +11,15 @@
         integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <script>
 
+        $(document).ready(function(){
+            if('${metabolism.getGender()}' == 'female'){
+                $('#female').prop('checked', true);
+            } else{
+                $('#male').prop('checked', true);
+            }
+            $('#activity').val('${metabolism.getActivity()}').prop("selected",true);
 
-
+        });
 
 
         function metabolism() {
@@ -36,16 +43,19 @@
                 return false;
             }
 
-            if(){
-
+            if($("input:radio[name=gender]:checked").length < 1){
+                check.innerHTML = '성별을 선택하세요.';
+                gender-radio.focus();
+                return false;
             }
 
-            if (activityRate.value == 1) {
+            if (activity.value == 1) {
                 check.innerHTML = '활동량을 선택하세요.';
                 activityRate.focus();
                 return false;
             }
 
+            check.innerHTML = '';
 
             var BMR = 0;
             var gender = $("input[type=radio][name=gender]:checked").val();
@@ -57,7 +67,7 @@
             }
             console.log(BMR);
             $('#basalMetabolicRate').val(Math.round(BMR));
-            $('#activityMetabolism').val(Math.round(BMR * $('#activityRate').val()));
+            $('#activityMetabolism').val(Math.round(BMR * $('#activity').val()));
         }
 
 
@@ -85,7 +95,7 @@
 
 
 
-            if (activityRate.value == 1) {
+            if (activity.value == 1) {
                 check.innerHTML = '활동량을 선택하세요.';
                 activityRate.focus();
                 return false;
@@ -97,6 +107,7 @@
                 return false;
             }
 
+            check.innerHTML = '';
             metabolismForm.submit();
         }
     </script>
@@ -131,19 +142,19 @@
                 </div>
                 <div class="mb-3 row">
                     <div class="form-check-inline" id="gender-radio" name="gender-radio">
-                        <input class="form-check-input" type="radio" name="gender" id="gender" value="male">
+                        <input class="form-check-input" type="radio" name="gender" id="male" value="male">
                         <label class="form-check-label" for="male">
                             남자
                         </label>
-                        <input class="form-check-input" type="radio" name="gender" id="gender" value="female">
+                        <input class="form-check-input" type="radio" name="gender" id="female" value="female">
                         <label class="form-check-label" for="female">
                             여자
                         </label>
                     </div>
                 </div>
                 <div class="mb-3 row">
-                    <select class="form-select" aria-label="Default select example" id="activityRate" name="activityRate">
-                        <option selected value="1">활동량을 선택해주세요</option>
+                    <select class="form-select" aria-label="Default select example" id="activity" name="activity">
+                        <option value="1">활동량을 선택해주세요</option>
                         <option value="1.2">빈둥빈둥</option>
                         <option value="1.5">좌식 업무</option>
                         <option value="1.8">돌아다니는 업무</option>
@@ -163,13 +174,13 @@
                 <div class="mb-3 row">
                     <label for="basalMetabolicRate" class="col-sm-2 col-form-label">기초대사량:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="basalMetabolicRate" name="basalMetabolicRate" value="${metabolism.getBasalMetabolicRate()}">kcal
+                        <input type="text" class="form-control" id="basalMetabolicRate" name="basalMetabolicRate" value="${metabolism.getBasalMetabolicRate()}" readonly>kcal
                     </div>
                 </div>
                 <div class="mb-3 row">
                     <label for="activityMetabolism" class="col-sm-2 col-form-label">활동대사량:</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="activityMetabolism" name="activityMetabolism" value="${metabolism.getActivityMetabolism()}">kcal
+                        <input type="text" class="form-control" id="activityMetabolism" name="activityMetabolism" value="${metabolism.getActivityMetabolism()}" readonly>kcal
                     </div>
                 </div>
                 <div class="mb-3 row">
