@@ -1,7 +1,7 @@
 package com.example.demo.metabolism.service;
 
 import com.example.demo.metabolism.domain.Metabolism;
-import com.example.demo.metabolism.repository.JdbcMetabolismRepository;
+//import com.example.demo.metabolism.repository.JdbcMetabolismRepository;
 import com.example.demo.metabolism.repository.MetabolismRepository;
 import com.example.demo.metabolism.repository.MybatisMetabolismRepository;
 import org.springframework.stereotype.Service;
