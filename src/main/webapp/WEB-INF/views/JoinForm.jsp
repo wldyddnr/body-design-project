@@ -15,10 +15,14 @@
 <script>
 
     var confirmKey = '인증번호';
+    var getMail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/);
+    var getCheck= RegExp(/^[a-zA-Z0-9]{4,12}$/);
+    var getName= RegExp(/^[가-힣]+$/);
 
 	function check() {
 	    var offset = $('#check').offset();
 		const check = document.getElementById('check');
+		$('html').animate({scrollTop : offset.top}, 200);
 		if (join.id.value.length < 1) {
 			check.innerHTML = '아이디를 입력하세요.';
 			return false;
@@ -28,6 +32,11 @@
 			check.innerHTML = '이름을 입력하세요.';
 			return false;
 		}
+
+		if(!getName.test(join.name.value)){
+            check.innerHTML = "이름을 다시 입력해 주세요.";
+            return false;
+        }
 
 		if (join.password.value.length < 1) {
 			check.innerHTML = '비밀번호를 입력하세요.';
@@ -68,7 +77,21 @@
             check.innerHTML = '인증번호를 확인해 주세요.';
             return false;
         }
-        $('html').animate({scrollTop : offset.top}, 200);
+
+        if(join.id.value == join.password.value){
+        check.innerHTML = '아이디와 비밀번호가 같습니다.';
+        return false;
+        }
+
+        if(!getCheck.test(join.id.value)){
+        check.innerHTML = '아이디는 4글자 이상 영어와 숫자만 입력해 주세요.';
+        return false;
+        }
+
+        if(!getMail.test(join.mail.value)){
+            check.innerHTML = "이메일형식에 맞게 입력해 주세요.";
+            return false;
+        }
 
 		join.submit();
 	}
@@ -82,7 +105,11 @@
             $('#check').text("아이디를 입력해주세요.");
             $('html').animate({scrollTop : offset.top}, 200);
             return false;
-            }
+        }
+        if(!getCheck.test(id)){
+            $('#check').text("아이디는 4글자 이상 영어와 숫자만 입력해 주세요.");
+            return false;
+        }
 		$.ajax({
 			url : '/idCheck',
 			type : 'get',
@@ -107,6 +134,17 @@
 		const email = $('#email').val(); // 이메일 주소값 얻어오기
 		console.log('완성된 이메일 : ' + email); // 이메일 오는지 확인
 		const checkInput = $('#emailConfirm') // 인증번호 입력하는곳
+
+        if (email < 1) {
+            $('#check').text("이메일을 입력하세요.");
+            return false;
+        }
+
+		if(!getMail.test(email)){
+		    $('#check').text("이메일형식에 맞게 입력해 주세요.");
+            return false;
+        }
+
 		$.ajax({
 			url : '/mailCheck',
 			type : 'get',
@@ -160,7 +198,7 @@
 			<div class="mb-1">
 				<label for="email" class="form-label">이메일 *</label>
 				<div class="input-group">
-					<input type="email" class="form-control" id="email" name="email" placeholder="">&nbsp;&nbsp;
+					<input type="text" class="form-control" id="email" name="email" placeholder="">&nbsp;&nbsp;
 					<button type="button" id = "emailConfirmBtn" class="btn btn-outline-dark" style="width: 30%;" onclick="confirmEmail()">인증하기</button>
 				</div>
 				<br>
