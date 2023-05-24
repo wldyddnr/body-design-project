@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.example.demo.member.domain.Member" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,10 +12,6 @@
 	crossorigin="anonymous">
 </head>
 <body>
-<%
-    Member member = (Member) session.getAttribute("member");
-    System.out.println(member);
-%>
 	<nav class="navbar navbar-expand-lg bg-body-white">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="/"><img src="https://item.kakaocdn.net/do/bbb480ec0250be12133594a2dce321e6ac8e738cb631e72fdb9a96b36413984e" style="height:50px;"></a>
@@ -27,20 +23,16 @@
 			</button>
  			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<%
-        			if(member == null){
-                %>
-					<li class="nav-item"><a class="nav-link"
-						aria-current="page" href="loginForm">로그인</a></li>
-				<%
-				}else{
-				%>
-				    <li class="nav-item"><a class="nav-link" href="/memberInfo"><%=member.getName()%></a></li>
-                    <li class="nav-item"><a class="nav-link" href="/logout">로그아웃</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/metabolismForm">칼로리계산기</a></li>
-                <%
-                }
-                %>
+				<c:choose>
+                  <c:when test="${!empty member}">
+                      <li class="nav-item"><a class="nav-link" href="/memberInfo">${member.getName()}</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/logout">로그아웃</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/metabolismForm">칼로리계산기</a></li>
+                  </c:when>
+                  <c:otherwise>
+                      <li class="nav-item"><a class="nav-link" aria-current="page" href="loginForm">로그인</a></li>
+                  </c:otherwise>
+                </c:choose>
 				</ul>
 			</div>
 		</div>

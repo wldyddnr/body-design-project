@@ -1,6 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.example.demo.member.domain.Member" %>
-<% Member member = (Member) session.getAttribute("member");%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +30,7 @@
            return false;
         }
 
-        if (updatePassword.password.value != <%=member.getPassword()%>){
+        if (updatePassword.password.value != ${member.getPassword()}){
            check.innerHTML = '현재 비밀번호가 일치하지 않습니다.';
            updatePassword.password.focus();
            return false;
