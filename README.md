@@ -13,17 +13,18 @@
 
 ## 개발환경
 
+<span><img src="https://img.shields.io/badge/IntelliJ-blueviolet?style=flat-square&logo=IntelliJ IDEA&logoColor=white"/></span>&nbsp;
+<span><img src="https://img.shields.io/badge/Apache Tomcat-red?style=flat-square&logo=Apache Tomcat&logoColor=white"/></span>&nbsp;
 <span><img src="https://img.shields.io/badge/Java-blue?style=flat-square&logo=Java&logoColor=white"/></span>&nbsp;
 <span><img src="https://img.shields.io/badge/SpringBoot-6DB33F?style=flat-square&logo=Spring&logoColor=white"/></span>&nbsp;
-<span><img src="https://img.shields.io/badge/IntelliJ-blueviolet?style=flat-square&logo=IntelliJ IDEA&logoColor=white"/></span>&nbsp;
+<span><img src="https://camo.githubusercontent.com/dc10e8952d262c5d003581757099dfe2b8c28b365167816c0ec6c2bb6f3e9f03/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d7942617469732d626c61636b3f7374796c653d666c61742d737175617265266c6f676f3d266c6f676f436f6c6f723d7768697465"/></span>&nbsp;
 <span><img src="https://img.shields.io/badge/Html-red?style=flat-square&logo=HTML5&logoColor=white"/></span>&nbsp;
 <span><img src="https://img.shields.io/badge/CSS-blue?style=flat-square&logo=CSS3&logoColor=white"/></span>&nbsp;
 <span><img src="https://img.shields.io/badge/JavaScript-brightgreen?style=flat-square&logo=JavaScript&logoColor=white"/></span>&nbsp;
 <span><img src="https://img.shields.io/badge/jQuery-lightgray?style=flat-square&logo=jQuery&logoColor=white"/></span>&nbsp;
-<span><img src="https://img.shields.io/badge/Apache Tomcat-red?style=flat-square&logo=Apache Tomcat&logoColor=white"/></span>&nbsp;
 <span><img src="https://img.shields.io/badge/Bootstrap-blueviolet?style=flat-square&logo=Bootstrap&logoColor=white"/></span>&nbsp;
 <span><img src="https://img.shields.io/badge/Github-black?style=flat-square&logo=GitHub&logoColor=white"/></span>&nbsp;
-<span><img src="https://camo.githubusercontent.com/dc10e8952d262c5d003581757099dfe2b8c28b365167816c0ec6c2bb6f3e9f03/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d7942617469732d626c61636b3f7374796c653d666c61742d737175617265266c6f676f3d266c6f676f436f6c6f723d7768697465"/></span>&nbsp;
+
 
 
 
@@ -34,15 +35,18 @@ __1. 로그인__
   - 아이디,비밀번호 찾기 - 가입시 입력한 이메일로 아이디,비밀번호 전송
    
 __2. 회원가입__
-  - 유효성 검사, 아이디 중복체크
+  - 유효성 검사
+  - 아이디 중복체크
   - 이메일 인증
    
 __3. 마이페이지__
   - 회원이 가입할때 입력한 정보가 출력되고 현재 비밀번호를 입력 후 정보를 변경 가능
+  - 비밀번호 변경
+  - 회원탈퇴
    
 __4. 칼로리 계산기__
   - 나이,키,몸무게,성별,활동량 입력후 성별에 따라 대사량 계산,저장
-  - 저장한 정보 출력
+  - 이미 저장한 정보가 있다면, 저장한 정보 출력
    
 
 ![메인](https://user-images.githubusercontent.com/114124771/235683184-2d1a6b29-9b02-4450-b1a9-e8a5d925c568.png)
