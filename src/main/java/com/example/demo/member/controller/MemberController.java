@@ -28,12 +28,14 @@ public class MemberController {
         this.metabolismService = metabolismService;
     }
 
+    //로그인페이지
     @GetMapping("/loginForm")
     public String loginForm() {
         return "LoginForm";
     }
 
 
+    //로그인처리
     @PostMapping("/login")
     public String login(Model model, Member member) {
         Member loginMember = memberService.login(member.getId());
@@ -50,27 +52,32 @@ public class MemberController {
         return "LoginSuccess";
     }
 
+    //회원가입 페이지
     @GetMapping("/joinForm")
     public String joinForm() {
         return "JoinForm";
     }
 
+    //회원가입 처리
     @PostMapping("/join")
     public String join(Member member) {
         memberService.join(member);
         return "JoinSuccess";
     }
 
+    //비밀번호 찾기 페이지
     @GetMapping("/findPassword")
     public String findPassword() {
         return "FindPasswordForm";
     }
 
+    // 아이디 찾기 페이지
     @GetMapping("/findId")
     public String findId() {
         return "FindIdForm";
     }
 
+    //아이디 중복확인 ajax
     @GetMapping("/idCheck")
     @ResponseBody
     public int idCheck(@RequestParam String id) {
@@ -78,17 +85,20 @@ public class MemberController {
         return memberService.checkId(id);
     }
 
+    //로그아웃
     @GetMapping("/logout")
     public String logout(SessionStatus session) {
         session.setComplete();
         return "LoginForm";
     }
 
+    //회원정보 페이지
     @GetMapping("/memberInfo")
     public String memberInfo() {
         return "MemberInfoForm";
     }
 
+    //회원정보 수정
     @PostMapping("/updateInfo")
     public String updateInfo(Member member, Model model) {
         memberService.updateInfo(member);
@@ -96,11 +106,13 @@ public class MemberController {
         return "UpdateSuccess";
     }
 
+    //비밀번호 수정 페이지
     @GetMapping("/updatePasswordForm")
     public String updatePasswordForm() {
         return "UpdatePassword";
     }
 
+    //비밀번호 수정 처리
     @PostMapping("updatePassword")
     public String updatePassword(HttpSession session, Model model, @RequestParam String newPassword) {
         Member member = (Member) session.getAttribute("member");
@@ -110,6 +122,7 @@ public class MemberController {
         return "UpdateSuccess";
     }
 
+    //회원탈퇴
     @GetMapping("deleteMember")
     public String deleteMember(HttpSession session) {
         Member member = (Member) session.getAttribute("member");
@@ -118,6 +131,7 @@ public class MemberController {
         return "DeleteSuccess";
     }
 
+    //비밀번호 찾기 처리
     @PostMapping("findPassword")
     public String findPassword(String email, String id) throws MessagingException {
         Member member = memberService.findPassword(id);
@@ -130,6 +144,7 @@ public class MemberController {
         return "FindFail";
     }
 
+    //아이디 찾기 처리
     @PostMapping("findId")
     public String findId(String email, String name) throws MessagingException {
         Member member = memberService.findId(email, name);
