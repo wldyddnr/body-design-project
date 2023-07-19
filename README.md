@@ -1,6 +1,9 @@
 # :muscle: BODY DEGIGN
 지용욱
 
+2023. 05. 15
+jdbc -> mybatis 변경
+
 ## CONTENT
   - [개요](#개요)
   - [개발환경](#개발환경)
